@@ -22,17 +22,7 @@
                 </div>
             </div>
             <div class="mt-5">
-                <div class="row mx-n2 mb-5 mb-md-9">
-                    <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0  mt-auto site" v-for="domain in filteredDomains" :key="domain.id">
-                        <a class="card h-100 transition-3d-hover" :href="domain.url" target="_blank">
-                        <img class="card-img-top" :src="'/domains/'+ domain.img" alt="Image Description">
-                        <div class="card-body">
-                            <span class="d-block small font-weight-bold text-cap mb-2">{{ domain.url }}</span>
-                            <h5 class="mb-0">{{ domain.title }}</h5>
-                        </div>
-                        </a>
-                    </div>
-                </div>
+                 
             </div>
         </div>
     </div>

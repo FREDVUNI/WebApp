@@ -53,7 +53,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-dark">Submit Domain</button>
             </div>
-       </form>
+       </form>  
     </div>
 </template>
 <script>
@@ -106,5 +106,33 @@ export default {
             return this.subcategories.filter((item) => item.category_id == this.form.category_id)
         }
     },
+}
+</script>
+
+<script>
+export default {
+    data(){
+        return{
+            form: new Form({
+                "category":""
+            })
+            // success: false
+        }
+    },
+    methods:{
+        submitDomain(){
+            let data = new FormData()
+            data.apppend("category",this.form.category)
+
+            axios.post("/domain",data)
+            .then(resp=>{
+                this.form.reset()
+                this.success = true
+            })
+            .catch(error=>{
+                this.form.errors.record(error.response.data)
+            })
+        }
+    }
 }
 </script>
